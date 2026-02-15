@@ -2,7 +2,7 @@ from instagrapi import Client
 import time
 
 cl = Client()
-cl.login("username", "password")
+cl.login("reelrun13", "runREEL<>123")
 
 time.sleep(5)
 

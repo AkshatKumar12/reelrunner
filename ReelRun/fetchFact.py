@@ -30,19 +30,17 @@ prompt = f"""
 Write a viral 30-second Instagram reel narration.
 
 Topic:
-A real fun event happened in India
+A real funny or mind-blowing event/fact from India.
 
 Requirements:
-- Start with a shocking 1-sentence hook.
-- Keep it story-based and cinematic.
-- Keep total length under 110 words.
-- End with a strong thought-provoking line.
-- Do NOT invent fictional events.
-- Output plain narration text only (no XML, no SSML, no markdown).
-- Use conversational spoken English with contractions when natural.
-- Keep sentence rhythm varied with a mix of short and medium sentences.
-- Add natural pauses using punctuation like commas and ellipses.
-- Avoid sounding like a textbook or Wikipedia summary.
+- Start with a shocking or funny 1-sentence hook.
+- Must be TRUE (no fictional stories).
+- Mix humor + curiosity.
+- Under 100 words.
+- End with a strong or funny thought.
+- Conversational spoken English.
+- Natural pauses using commas and ellipses.
+- No markdown, no formatting, plain text only.
 """
 
 response = client.models.generate_content(
@@ -90,8 +88,8 @@ async def generate_voice(text):
     communicate = edge_tts.Communicate(
         text=text,
         voice="en-US-AndrewNeural",
-        rate="-10%",
-        pitch="-2Hz",
+        rate="+10%",
+        pitch="+2Hz",
         volume="+0%",
     )
     await communicate.save("voice.mp3")
